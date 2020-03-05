@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FrozenArcher.github.io</id>
     <title>Gae_Blog</title>
-    <updated>2020-03-05T13:25:58.366Z</updated>
+    <updated>2020-03-05T13:29:29.683Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FrozenArcher.github.io"/>
     <link rel="self" href="https://FrozenArcher.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>FrozenArcher&apos;s Blog</subtitle>
     <logo>https://FrozenArcher.github.io/images/avatar.png</logo>
     <icon>https://FrozenArcher.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gae_Blog</rights>
