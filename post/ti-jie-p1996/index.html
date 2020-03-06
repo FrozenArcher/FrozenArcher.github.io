@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>某菜鸡的第一篇题解 | FrozenArcher</title>
+<title>题解 P1996 | FrozenArcher</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,18 +18,15 @@
 
 
 
-    <meta name="description" content="a+b Problem
-全站最水的一道题
+    <meta name="description" content="P1996 约瑟夫问题
+又是一道一遍过的水题
 题目链接
-不多说，直接上代码：
-#include&lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    int a,b;
-    cin&gt..." />
-    <meta name="keywords" content="C/C++,OI" />
+本题使用STL里的队列
+#include&lt;queue&gt;
+食用方法：
+queue &lt;int&gt; q;	         建立一个内部元素类型为int的队列；
+q.p..." />
+    <meta name="keywords" content="算法,C/C++,OI" />
   </head>
   <body>
     <div id="app" class="main">
@@ -100,33 +97,81 @@ int main()
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">某菜鸡的第一篇题解</h2>
+            <h2 class="post-title">题解 P1996</h2>
             <div class="post-date">03/06/2020</div>
             
-              <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/mou-cai-ji-de-di-yi-pian-ti-jie.jpg')">
+              <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/ti-jie-p1996.jpg')">
               </div>
             
             <div class="post-content" v-pre>
-              <h1 id="ab-problem">a+b Problem</h1>
-<p><s>全站最水的一道题</s></p>
-<p><a href="https://www.luogu.com.cn/problem/P1001">题目链接</a></p>
-<p>不多说，直接上代码：</p>
+              <h1 id="p1996-约瑟夫问题">P1996 约瑟夫问题</h1>
+<p><s>又是一道一遍过的水题</s></p>
+<p><a href="https://www.luogu.com.cn/problem/P1996">题目链接</a></p>
+<p>本题使用STL里的队列</p>
+<p><code>#include&lt;queue&gt;</code></p>
+<p>食用方法：</p>
+<p><code>queue &lt;int&gt; q;</code>	         建立一个内部元素类型为int的队列；</p>
+<p><code>q.push(x);</code>                     在队尾插入一个元素x；</p>
+<p><code>q.pop();</code>                         弹出队首元素；</p>
+<p><code>q.front();</code>                     查询队首元素；</p>
+<p><code>q.end();</code>                         查询队尾元素；</p>
+<p><code>q.size();</code>                       返回元素个数；</p>
+<p><code>q.empty();</code>                     判断队列是否为空；</p>
+<hr>
+<h2 id="解题思路">解题思路</h2>
+<p>每个人轮流报数，就相当于把这些人排成一排，排头报数，报完数走到队尾。所以，只要判断这个队列的队首元素是不是报到m的那个人，如果是，直接把他删除；如果不是，让他排到队尾。而队列是否还有元素可以用<code>empty()</code>来判断。有了这一思路，我们可以得到核心代码：</p>
+<pre><code class="language-c++">for(int cnt=1;!q.empty();cnt++)  //用cnt%m==0来判断是不是报到了m。
+    {                            //一直循环进行到队列为空
+        int x=q.front();         //记录队首元素
+        q.pop();                 //把队首元素抛弃
+        if(cnt%m==0)             //如果报到了m
+        {
+            cout&lt;&lt;x&lt;&lt;' ';        //输出答案，同时被取出的这个人永远的消失了
+            continue;
+        }
+        q.push(x);               //如果不是，就把他排到队尾
+    }
+</code></pre>
+<p>再根据题意，写出程序其他部分即可。</p>
+<hr>
+<h2 id="完整代码">完整代码</h2>
 <pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;queue&gt;
 using namespace std;
 
 int main()
 {
-    int a,b;
-    cin&gt;&gt;a&gt;&gt;b;
-    cout&lt;&lt;a+b;
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    queue &lt;int&gt; q;
+    for(int i=1;i&lt;=n;i++)
+    {
+        q.push(i);
+    }
+    for(int cnt=1;!q.empty();cnt++)
+    {
+        int x=q.front();
+        q.pop();
+        if(cnt%m==0)
+        {
+            cout&lt;&lt;x&lt;&lt;' ';
+            continue;
+        }
+        q.push(x);
+    }
     return 0;
 }
+
 //by FrozenArcher
 </code></pre>
 
             </div>
             
               <div class="tag-container">
+                
+                  <a href="https://FrozenArcher.github.io/tag/vs64qzBpJ/" class="tag">
+                    算法
+                  </a>
                 
                   <a href="https://FrozenArcher.github.io/tag/mA51lhRBT/" class="tag">
                     C/C++
@@ -138,6 +183,15 @@ int main()
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://FrozenArcher.github.io/post/mou-cai-ji-de-di-yi-pian-ti-jie/">
+                  <h3 class="post-title">
+                    某菜鸡的第一篇题解
+                  </h3>
+                </a>
+              </div>
             
 
             

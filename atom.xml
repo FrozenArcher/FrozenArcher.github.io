@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FrozenArcher.github.io</id>
     <title>FrozenArcher</title>
-    <updated>2020-03-06T07:31:39.700Z</updated>
+    <updated>2020-03-06T08:49:50.733Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FrozenArcher.github.io"/>
     <link rel="self" href="https://FrozenArcher.github.io/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://FrozenArcher.github.io/images/avatar.png</logo>
     <icon>https://FrozenArcher.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, FrozenArcher</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 P1996]]></title>
+        <id>https://FrozenArcher.github.io/post/ti-jie-p1996/</id>
+        <link href="https://FrozenArcher.github.io/post/ti-jie-p1996/">
+        </link>
+        <updated>2020-03-06T08:47:14.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="p1996-约瑟夫问题">P1996 约瑟夫问题</h1>
+<p><s>又是一道一遍过的水题</s></p>
+<p><a href="https://www.luogu.com.cn/problem/P1996">题目链接</a></p>
+<p>本题使用STL里的队列</p>
+<p><code>#include&lt;queue&gt;</code></p>
+<p>食用方法：</p>
+<p><code>queue &lt;int&gt; q;</code>	         建立一个内部元素类型为int的队列；</p>
+<p><code>q.push(x);</code>                     在队尾插入一个元素x；</p>
+<p><code>q.pop();</code>                         弹出队首元素；</p>
+<p><code>q.front();</code>                     查询队首元素；</p>
+<p><code>q.end();</code>                         查询队尾元素；</p>
+<p><code>q.size();</code>                       返回元素个数；</p>
+<p><code>q.empty();</code>                     判断队列是否为空；</p>
+<hr>
+<h2 id="解题思路">解题思路</h2>
+<p>每个人轮流报数，就相当于把这些人排成一排，排头报数，报完数走到队尾。所以，只要判断这个队列的队首元素是不是报到m的那个人，如果是，直接把他删除；如果不是，让他排到队尾。而队列是否还有元素可以用<code>empty()</code>来判断。有了这一思路，我们可以得到核心代码：</p>
+<pre><code class="language-c++">for(int cnt=1;!q.empty();cnt++)  //用cnt%m==0来判断是不是报到了m。
+    {                            //一直循环进行到队列为空
+        int x=q.front();         //记录队首元素
+        q.pop();                 //把队首元素抛弃
+        if(cnt%m==0)             //如果报到了m
+        {
+            cout&lt;&lt;x&lt;&lt;' ';        //输出答案，同时被取出的这个人永远的消失了
+            continue;
+        }
+        q.push(x);               //如果不是，就把他排到队尾
+    }
+</code></pre>
+<p>再根据题意，写出程序其他部分即可。</p>
+<hr>
+<h2 id="完整代码">完整代码</h2>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;queue&gt;
+using namespace std;
+
+int main()
+{
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    queue &lt;int&gt; q;
+    for(int i=1;i&lt;=n;i++)
+    {
+        q.push(i);
+    }
+    for(int cnt=1;!q.empty();cnt++)
+    {
+        int x=q.front();
+        q.pop();
+        if(cnt%m==0)
+        {
+            cout&lt;&lt;x&lt;&lt;' ';
+            continue;
+        }
+        q.push(x);
+    }
+    return 0;
+}
+
+//by FrozenArcher
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[某菜鸡的第一篇题解]]></title>
         <id>https://FrozenArcher.github.io/post/mou-cai-ji-de-di-yi-pian-ti-jie/</id>
