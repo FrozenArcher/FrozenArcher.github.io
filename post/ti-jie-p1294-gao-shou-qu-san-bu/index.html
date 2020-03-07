@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>题解 P1996 | FrozenArcher</title>
+<title>题解P1294 高手去散步 | FrozenArcher</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,15 +18,18 @@
 
 
 
-    <meta name="description" content="P1996 约瑟夫问题
-又是一道一遍过的水题
+    <meta name="description" content="题解 P1294 高手去散步
 题目链接
-本题使用STL里的队列
-#include&lt;queue&gt;
-食用方法：
-queue &lt;int&gt; q;	         建立一个内部元素类型为int的队列；
-q.p..." />
-    <meta name="keywords" content="算法,C/C++,OI" />
+解题思路
+
+用邻接表存图
+依次枚举每个结点，找出这些节点的“最大答案”
+对于每个节点，采用深度优先遍历，找出最长路径。
+
+
+核心代码：
+依据思路，对于每个节点，我们可以写出深度优先遍历的函数，采用递归..." />
+    <meta name="keywords" content="嘉兴一中洗脑社,算法,C/C++,OI" />
   </head>
   <body>
     <div id="app" class="main">
@@ -97,77 +100,104 @@ q.p..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">题解 P1996</h2>
-            <div class="post-date">03/06/2020</div>
+            <h2 class="post-title">题解P1294 高手去散步</h2>
+            <div class="post-date">03/07/2020</div>
             
-              <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/ti-jie-p1996.jpg')">
+              <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/ti-jie-p1294-gao-shou-qu-san-bu.jpg')">
               </div>
             
             <div class="post-content" v-pre>
-              <h1 id="p1996-约瑟夫问题">P1996 约瑟夫问题</h1>
-<p><s>又是一道一遍过的水题</s></p>
-<p><a href="https://www.luogu.com.cn/problem/P1996">题目链接</a></p>
-<p>本题使用STL里的队列</p>
-<p><code>#include&lt;queue&gt;</code></p>
-<p>食用方法：</p>
-<p><code>queue &lt;int&gt; q;</code>	         建立一个内部元素类型为int的队列；</p>
-<p><code>q.push(x);</code>                     在队尾插入一个元素x；</p>
-<p><code>q.pop();</code>                         弹出队首元素；</p>
-<p><code>q.front();</code>                     查询队首元素；</p>
-<p><code>q.end();</code>                         查询队尾元素；</p>
-<p><code>q.size();</code>                       返回元素个数；</p>
-<p><code>q.empty();</code>                     判断队列是否为空；</p>
-<hr>
+              <h1 id="题解-p1294-高手去散步">题解 P1294 高手去散步</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1294">题目链接</a></p>
 <h2 id="解题思路">解题思路</h2>
-<p>每个人轮流报数，就相当于把这些人排成一排，排头报数，报完数走到队尾。所以，只要判断这个队列的队首元素是不是报到m的那个人，如果是，直接把他删除；如果不是，让他排到队尾。而队列是否还有元素可以用<code>empty()</code>来判断。有了这一思路，我们可以得到核心代码：</p>
-<pre><code class="language-c++">for(int cnt=1;!q.empty();cnt++)  //用cnt%m==0来判断是不是报到了m。
-    {                            //一直循环进行到队列为空
-        int x=q.front();         //记录队首元素
-        q.pop();                 //把队首元素抛弃
-        if(cnt%m==0)             //如果报到了m
-        {
-            cout&lt;&lt;x&lt;&lt;' ';        //输出答案，同时被取出的这个人永远的消失了
-            continue;
-        }
-        q.push(x);               //如果不是，就把他排到队尾
-    }
-</code></pre>
-<p>再根据题意，写出程序其他部分即可。</p>
+<ol>
+<li>用邻接表存图</li>
+<li>依次枚举每个结点，找出这些节点的“最大答案”</li>
+<li>对于每个节点，采用深度优先遍历，找出最长路径。</li>
+</ol>
 <hr>
-<h2 id="完整代码">完整代码</h2>
-<pre><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;queue&gt;
+<h2 id="核心代码">核心代码：</h2>
+<p>依据思路，对于每个节点，我们可以写出深度优先遍历的函数，采用递归写法：</p>
+<pre><code class="language-c++">//用 __ans 记录最长路径，linker[MAX_N][MAX_N] 为存图用的邻接表，vis[MAX_N]记录是否访问。
+void dfs(int x, int DIS_NOW)                   //传递参数：编号为x的节点和此时的路程DIS_NOW
+{
+    __ans=max(__ans, DIS_NOW);                 //把__ans更新为最大值
+    for(int i=1;i&lt;=n;i++)                      //遍历每个节点
+    {
+        if(linker[x][i] &gt; 0 &amp;&amp; vis[i] == 0)    //如果两个节点之间有边连接且未访问
+        {
+            vis[i]=1;                          //标记为已访问
+            dfs(i, DIS_NOW + linker[x][i]);    //dfs下一个节点
+            vis[i]=0;                          //解除记录
+        }
+    }
+}
+</code></pre>
+<hr>
+<h2 id="完整代码">完整代码：</h2>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#define  MAX_N 25
 using namespace std;
+
+/* by FrozenArcher */
+
+int   n,m;
+bool  vis[MAX_N];
+int   linker[MAX_N][MAX_N];
+int   ans,__ans;
+
+int max(int x, int y)
+{
+    if(x&gt;y) return x;
+    else return y;
+}
+
+void dfs(int x, int DIS_NOW)
+{
+    __ans=max(__ans, DIS_NOW);
+    for(int i=1;i&lt;=n;i++)
+    {
+        if(linker[x][i] &gt; 0 &amp;&amp; vis[i] == 0)
+        {
+            vis[i]=1;
+            dfs(i, DIS_NOW + linker[x][i]);
+            vis[i]=0;
+        }
+    }
+}
 
 int main()
 {
-    int n,m;
     cin&gt;&gt;n&gt;&gt;m;
-    queue &lt;int&gt; q;
-    for(int i=1;i&lt;=n;i++)
+    for(int i=1;i&lt;=m;i++)
     {
-        q.push(i);
-    }
-    for(int cnt=1;!q.empty();cnt++)
+        int from,to,cost;
+        cin&gt;&gt;from&gt;&gt;to&gt;&gt;cost;
+        linker[from][to]=linker[to][from]=cost;  //由于是无向图，两个方向都要存
+    }      
+    for(int i=1;i&lt;=n;i++)                        //得到每个点的最大距离
     {
-        int x=q.front();
-        q.pop();
-        if(cnt%m==0)
-        {
-            cout&lt;&lt;x&lt;&lt;' ';
-            continue;
-        }
-        q.push(x);
+        vis[i]=1;
+        dfs(i, 0);
+        ans=max(ans,__ans);                      //记录所有点中最大距离
+        __ans=0;
+        memset(vis, 0, sizeof(vis));             //清空访问记录
     }
+    cout&lt;&lt;ans;
     return 0;
 }
-
-//by FrozenArcher
 </code></pre>
+<p>————end————</p>
+<hr>
 
             </div>
             
               <div class="tag-container">
+                
+                  <a href="https://FrozenArcher.github.io/tag/whavDOfjN/" class="tag">
+                    嘉兴一中洗脑社
+                  </a>
                 
                   <a href="https://FrozenArcher.github.io/tag/vs64qzBpJ/" class="tag">
                     算法
@@ -186,9 +216,9 @@ int main()
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://FrozenArcher.github.io/post/mou-cai-ji-de-di-yi-pian-ti-jie/">
+                <a href="https://FrozenArcher.github.io/post/ti-jie-p1996/">
                   <h3 class="post-title">
-                    某菜鸡的第一篇题解
+                    题解 P1996
                   </h3>
                 </a>
               </div>

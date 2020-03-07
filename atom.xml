@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FrozenArcher.github.io</id>
     <title>FrozenArcher</title>
-    <updated>2020-03-06T08:49:50.733Z</updated>
+    <updated>2020-03-07T12:00:36.933Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FrozenArcher.github.io"/>
     <link rel="self" href="https://FrozenArcher.github.io/atom.xml"/>
@@ -10,6 +10,97 @@
     <logo>https://FrozenArcher.github.io/images/avatar.png</logo>
     <icon>https://FrozenArcher.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, FrozenArcher</rights>
+    <entry>
+        <title type="html"><![CDATA[题解P1294 高手去散步]]></title>
+        <id>https://FrozenArcher.github.io/post/ti-jie-p1294-gao-shou-qu-san-bu/</id>
+        <link href="https://FrozenArcher.github.io/post/ti-jie-p1294-gao-shou-qu-san-bu/">
+        </link>
+        <updated>2020-03-07T11:58:45.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="题解-p1294-高手去散步">题解 P1294 高手去散步</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1294">题目链接</a></p>
+<h2 id="解题思路">解题思路</h2>
+<ol>
+<li>用邻接表存图</li>
+<li>依次枚举每个结点，找出这些节点的“最大答案”</li>
+<li>对于每个节点，采用深度优先遍历，找出最长路径。</li>
+</ol>
+<hr>
+<h2 id="核心代码">核心代码：</h2>
+<p>依据思路，对于每个节点，我们可以写出深度优先遍历的函数，采用递归写法：</p>
+<pre><code class="language-c++">//用 __ans 记录最长路径，linker[MAX_N][MAX_N] 为存图用的邻接表，vis[MAX_N]记录是否访问。
+void dfs(int x, int DIS_NOW)                   //传递参数：编号为x的节点和此时的路程DIS_NOW
+{
+    __ans=max(__ans, DIS_NOW);                 //把__ans更新为最大值
+    for(int i=1;i&lt;=n;i++)                      //遍历每个节点
+    {
+        if(linker[x][i] &gt; 0 &amp;&amp; vis[i] == 0)    //如果两个节点之间有边连接且未访问
+        {
+            vis[i]=1;                          //标记为已访问
+            dfs(i, DIS_NOW + linker[x][i]);    //dfs下一个节点
+            vis[i]=0;                          //解除记录
+        }
+    }
+}
+</code></pre>
+<hr>
+<h2 id="完整代码">完整代码：</h2>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#define  MAX_N 25
+using namespace std;
+
+/* by FrozenArcher */
+
+int   n,m;
+bool  vis[MAX_N];
+int   linker[MAX_N][MAX_N];
+int   ans,__ans;
+
+int max(int x, int y)
+{
+    if(x&gt;y) return x;
+    else return y;
+}
+
+void dfs(int x, int DIS_NOW)
+{
+    __ans=max(__ans, DIS_NOW);
+    for(int i=1;i&lt;=n;i++)
+    {
+        if(linker[x][i] &gt; 0 &amp;&amp; vis[i] == 0)
+        {
+            vis[i]=1;
+            dfs(i, DIS_NOW + linker[x][i]);
+            vis[i]=0;
+        }
+    }
+}
+
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=m;i++)
+    {
+        int from,to,cost;
+        cin&gt;&gt;from&gt;&gt;to&gt;&gt;cost;
+        linker[from][to]=linker[to][from]=cost;  //由于是无向图，两个方向都要存
+    }      
+    for(int i=1;i&lt;=n;i++)                        //得到每个点的最大距离
+    {
+        vis[i]=1;
+        dfs(i, 0);
+        ans=max(ans,__ans);                      //记录所有点中最大距离
+        __ans=0;
+        memset(vis, 0, sizeof(vis));             //清空访问记录
+    }
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
+<p>————end————</p>
+<hr>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解 P1996]]></title>
         <id>https://FrozenArcher.github.io/post/ti-jie-p1996/</id>
