@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://FrozenArcher.github.io</id>
     <title>FrozenArcher</title>
-    <updated>2020-04-01T10:01:59.940Z</updated>
+    <updated>2020-04-01T10:04:36.780Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://FrozenArcher.github.io"/>
     <link rel="self" href="https://FrozenArcher.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://FrozenArcher.github.io/images/avatar.png</logo>
     <icon>https://FrozenArcher.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, FrozenArcher</rights>
+    <entry>
+        <title type="html"><![CDATA[欢迎来到OI的世界]]></title>
+        <id>https://FrozenArcher.github.io/post/huan-ying-lai-dao-oi-de-shi-jie/</id>
+        <link href="https://FrozenArcher.github.io/post/huan-ying-lai-dao-oi-de-shi-jie/">
+        </link>
+        <updated>2020-04-01T10:02:23.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="欢迎来到oi的世界">欢迎来到OI的世界</h1>
+<h2 id="博客作者来自嘉兴一中洗脑社的某菜鸡">博客作者：来自嘉兴一中洗脑社的某菜鸡</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[题解P4017 最大食物链计数]]></title>
         <id>https://FrozenArcher.github.io/post/ti-jie-p4017-zui-da-shi-wu-lian-ji-shu/</id>
