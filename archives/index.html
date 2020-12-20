@@ -9,7 +9,7 @@
 <meta name="description" content="FrozenArcher&#39;s Blog">
 <meta name="theme-color" content="#343a40">
 <title>FrozenArcher</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1608452344614">
+<link rel="shortcut icon" href="/favicon.ico?v=1608452598813">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -73,8 +73,6 @@
           
             
             
-              
-            
             <li class="nav-item ">
               
               
@@ -85,8 +83,6 @@
             </li>
           
             
-            
-              
             
             <li class="nav-item nav-item-active">
               
@@ -99,8 +95,6 @@
           
             
             
-              
-            
             <li class="nav-item ">
               
               
@@ -112,8 +106,6 @@
           
             
             
-              
-            
             <li class="nav-item ">
               
               
@@ -123,16 +115,6 @@
               
             </li>
           
-          
-            
-              <li class="nav-item ">
-                <a href="/friends/" target="_self">
-                  
-                    <i class="fa fa-address-book"></i> 友情链接
-                  
-                </a>
-              </li>
-            
           
           
             <li id="fa_search" class="nav-item">
@@ -222,6 +204,21 @@
             </a>
           
         
+        
+      </div>
+    </div>
+  
+
+  
+    <div class="sidebar-item right-motion sidebar-item-friends">
+      
+        <p class="friends-title"><i class="fa fa-ship"></i> 友情链接</p>
+      
+      <div class="friends-box">
+        
+          <p>
+            <a href=""></a>
+          </p>
         
       </div>
     </div>
@@ -382,48 +379,6 @@
   </div>
   
   
-  
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
-  <div class="aplayer" id="aplayer"></div>
-  <script>
-  let musics = JSON.parse('[{"author":"丢火车乐队","cover":"https://y.gtimg.cn/music/photo_new/T002R300x300M000001mbG164E1j7C_1.jpg?max_age=2592000","lrc":"","musicLink":"https://github.com/FrozenArcher/hello-world/blob/main/%E4%B8%A2%E7%81%AB%E8%BD%A6%E4%B9%90%E9%98%9F%20-%20%E7%81%AB%E8%BD%A6%E6%97%A5%E8%AE%B0.mp3","musicName":" 火车日记"}]');
-  let mediaMusic = [];
-  for (let i = 0; i < musics.length; i++) {
-    let item = musics[i];
-    mediaMusic.push({
-      name: item.musicName,
-      artist: item.author,
-      url: item.musicLink,
-      lrc: item.lrc,
-      cover: item.cover
-    });
-  }
-
-  const ap = new APlayer({
-      container: document.getElementById('aplayer'),
-      fixed: true,
-      lrcType: 3,
-      listFolded: false,
-      listMaxHeight: 90,
-      audio: mediaMusic
-  });
-  window.addEventListener('load', function() {
-    let postBody = document.querySelector('#post_body');
-    let hs = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    postBody && hs.forEach(h => {
-      let helems = postBody.querySelectorAll(h);
-      if (helems.length > 0) {
-        helems.forEach(elem => {
-          elem.id = encodeURI(elem.id);
-        })
-      }
-    })
-  })
-  </script>
-
-
   
 </div>
 <script>
@@ -1190,6 +1145,13 @@ int main()
 </script>
 <script src="/media/js/motion.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
 
 
 
