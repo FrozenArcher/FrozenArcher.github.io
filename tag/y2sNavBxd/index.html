@@ -1,16 +1,213 @@
+
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>页面跳转 Page forwarding</title>
-    <meta http-equiv="Cache-Control: no-cache, no-store, must-revalidate">
-    <meta http-equiv="refresh" content="0;url=https://FrozenArcher.github.io" />
-    <style>body, html{background:#303030;color:#fff;}a{text-decoration: none;color:#2196f3;transition: all .25s;}</style>
-</head>
-<body>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
 
-<p>你不该来到这，现在 <a href="https://FrozenArcher.github.io">请点此处</a> 回到正轨。<br>This is weird, <a href="https://FrozenArcher.github.io">click here</a> Back to home-page.</p>
+<title>软件工程 | FrozenArcher</title>
+<meta name="description" content="FrozenArcher&#39;s Blog">
 
-</body>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://FrozenArcher.github.io/favicon.ico?v=1608440010746">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://FrozenArcher.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://FrozenArcher.github.io">
+        <img class="avatar" src="https://FrozenArcher.github.io/images/avatar.png?v=1608440010746" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://FrozenArcher.github.io">
+        <h1 class="site-title">FrozenArcher</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 软件工程
+          </h2> 
+        </div>
+
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://FrozenArcher.github.io/post/bio/">
+        <h2 class="post-title">个人简介</h2>
+      </a>
+      <div class="post-abstract">
+        <h1 id="frozenarcher个人简介">FrozenArcher个人简介</h1>
+<blockquote>
+<p><strong>今天不是个可以讨论的命题</strong></p>
+<p><strong>明天也不是</strong></p>
+<p><strong>你也不是我也不是</strong></p>
+<p>​                                   ——<em>长谷川菠萝</em> <strong>《死神》</strong></p>
+</blockquote>
+<h2 id="1-个人概况">1. 个人概况</h2>
+<ul>
+<li>
+<p>嘉兴一中前OIer，浙江高考物生技选手，学习OI一年却一无所获，不过并不后悔。</p>
+</li>
+<li>
+<p>喜欢软件工程。特别偏爱C#，不是很喜欢python、JavaScript这样的类型不严格的编程语言。</p>
+</li>
+<li>
+<p>兴趣爱好广泛，包括但不限于Unity、篮球、素描、油画、PUBG、王者荣耀。</p>
+</li>
+<li>
+<p>梦想考华科或华师，正在努力奋斗中~</p>
+</li>
+</ul>
+<hr>
+<h2 id="2计算机学习历程">2.计算机学习历程</h2>
+<p>如上所述，学过OI，是从2019年9月开始接触的。这之前几乎没接触过编程，但是接触了之后立马爱不释手。大概学了三个月之后，觉得枯燥无趣，就自学起python来——这也是我接触的第二门编程语言。</p>
+<p>2020年初，时大疫，居家不出。那段时间经常翘网课去b站上学写pygame——结果还真tm给我做出来了一个游戏，不过有很多bug。从此我迷上了游戏制作，但还是“不辍”主业，三天打鱼两天晒网地学点OI。</p>
+<p>2020年4月，第一次接触到一生挚爱——C#。多亏了嘉兴一中清芬阁某书架上的一本C#入门经典。C#是我学会的第三门语言，也是我最最最喜爱的一门。</p>
+<p>2020年7月，第一次接触到Unity引擎。之后便一发不可收拾，玩Unity玩得不亦乐乎。暑假里想组织一个团队开发游戏，结果因为没有组织经验，加之学业繁忙（分班以后遇见一个阴间班主任），不得不放弃这一目标。</p>
+<p>2020年10月，第一次考信息竞赛，结果死在了CSP_s初赛。我这辈子还没去过他妈的学军！光荣退役以后，我可以开开心心搞我的开发了，也因此收获不少。</p>
+<p>2020年12月，第一次接触web开发——使用django。一开始自己摸索，一个晚上运行了十几次</p>
+<p><code>django-admin startproject XXX</code> 命令，几乎崩溃。后来买了一本混蛋教程，又花了一个周末研究也研究不出啥来——从此，我开始厌恶python和web开发，还有那该死的JavaScript。我喜欢C#强类型化和本地exe生成的稳重感，不像“云”这么轻浮。</p>
+<p>差不多同一时期，我接触了java。和C#一样，java也有强类型化的稳重感，但不同的是java更具有C/C++的灵活性和“低级”性（指相对于更接近使用者语言，这些语言更接近机器）。我也不知道这种感觉从何而来，有什么依据——也许这只是我对外物的某种感觉罢了。</p>
+<hr>
+<h2 id="3联系方式">3.联系方式</h2>
+<p>邮箱：yhy242989105@hotmail.com</p>
+<p>bilibili:  FrozenArcher</p>
+<p>github: <a href="https://github.com/FrozenArcher">FrozenArcher</a></p>
+<hr>
+<p>2020.12.19</p>
+<p>持续更新中<img src="https://FrozenArcher.github.io/post-images/1608404460883.jpg" alt="" loading="lazy"></p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 12/20/2020</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://FrozenArcher.github.io/tag/y2sNavBxd/">
+                软件工程
+                
+                  ，
+                
+              </a>
+            
+              <a href="https://FrozenArcher.github.io/tag/whavDOfjN/">
+                嘉兴一中洗脑社
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://FrozenArcher.github.io/post/bio/">
+        <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/bio.jpg')">
+        </div>
+      </a>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">FrozenArcher's Blog</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/FrozenArcher" target="_blank">FrozenArcher</a> | <a class="rss" href="https://FrozenArcher.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
 </html>
