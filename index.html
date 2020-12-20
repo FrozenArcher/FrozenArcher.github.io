@@ -1,105 +1,56 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>FrozenArcher</title>
+<!DOCTYPE HTML>
+<!--
+	Multiverse by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh-cn">
+<head>
+    <title>FrozenArcher</title>
+<meta name="keywords" content="" />
+<meta name="description" content="FrozenArcher's Blog" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<base href="https://FrozenArcher.github.io/">
+<link rel="shortcut icon" href="favicon.ico" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://FrozenArcher.github.io/favicon.ico?v=1608404563673">
-<link rel="stylesheet" href="https://FrozenArcher.github.io/styles/main.css">
+<link rel="stylesheet" href="media/css/main-multiverse.css" />
+<link rel="stylesheet" href="media/css/modify-multiverse.css" />
+<noscript><link rel="stylesheet" href="media/css/noscript-multiverse.css" /></noscript>
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body class="is-preload">
 
+<!-- 外封 -->
+<div id="wrapper">
 
-
-    <meta name="description" content="FrozenArcher&#39;s Blog">
+    <!-- 页眉 -->
+    <header id="header">
     
-  </head>
-  <body>
-    <div id="app" class="main">
+    <h1><strong>FrozenArcher</strong> 由 <a href="https://html5up.net">HTML5 UP</a> 设计样式。</h1>
+    <nav>
+        <ul>
+            
+            
+            <li><a href="#footer" class="icon solid fa-info-circle">关于</a></li>
+        </ul>
+    </nav>
+    
+</header>
 
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://FrozenArcher.github.io">
-        <img src="https://FrozenArcher.github.io/images/avatar.png?v=1608404563673" class="site-logo">
-        <h1 class="site-title">FrozenArcher</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
+    <!-- 主要内容 -->
+    
+<main id="main">
+    
+    <article class="thumb">
         
-          <a href="/" class="site-nav">
-            首页
-          </a>
+            <a href="https://FrozenArcher.github.io/post-images/bio.jpg" class="image"><img src="https://FrozenArcher.github.io/post-images/bio.jpg" /></a>
         
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      FrozenArcher's Blog
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://FrozenArcher.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://FrozenArcher.github.io/post/bio/">
-                  <h2 class="post-title">个人简介</h2>
-                </a>
-                <div class="post-date">
-                  12/20/2020
-                </div>
-                <div class="post-abstract">
-                  <h1 id="frozenarcher个人简介">FrozenArcher个人简介</h1>
+        <h2>个人简介</h2>
+        <h1 id="frozenarcher个人简介">FrozenArcher个人简介</h1>
 <blockquote>
 <p><strong>今天不是个可以讨论的命题</strong></p>
 <p><strong>明天也不是</strong></p>
@@ -139,130 +90,311 @@
 <hr>
 <p>2020.12.19</p>
 <p>持续更新中<img src="https://FrozenArcher.github.io/post-images/1608404460883.jpg" alt="" loading="lazy"></p>
+<!-- more -->
 
-                </div>
-              </div>
-              
-                <a class="right" href="https://FrozenArcher.github.io/post/bio/">
-                  <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/bio.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://FrozenArcher.github.io/post/ti-jie-p4017-zui-da-shi-wu-lian-ji-shu/">
-                  <h2 class="post-title">题解 P4017最大食物链计数</h2>
-                </a>
-                <div class="post-date">
-                  04/01/2020
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://FrozenArcher.github.io/post/ti-jie-p4017-zui-da-shi-wu-lian-ji-shu/">
-                  <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/ti-jie-p4017-zui-da-shi-wu-lian-ji-shu.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://FrozenArcher.github.io/post/ti-jie-p1294-gao-shou-qu-san-bu/">
-                  <h2 class="post-title">题解P1294 高手去散步</h2>
-                </a>
-                <div class="post-date">
-                  03/07/2020
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://FrozenArcher.github.io/post/ti-jie-p1294-gao-shou-qu-san-bu/">
-                  <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/ti-jie-p1294-gao-shou-qu-san-bu.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://FrozenArcher.github.io/post/ti-jie-p1996/">
-                  <h2 class="post-title">题解 P1996</h2>
-                </a>
-                <div class="post-date">
-                  03/06/2020
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://FrozenArcher.github.io/post/ti-jie-p1996/">
-                  <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/ti-jie-p1996.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://FrozenArcher.github.io/post/mou-cai-ji-de-di-yi-pian-ti-jie/">
-                  <h2 class="post-title">某菜鸡的第一篇题解</h2>
-                </a>
-                <div class="post-date">
-                  03/06/2020
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://FrozenArcher.github.io/post/mou-cai-ji-de-di-yi-pian-ti-jie/">
-                  <div class="feature-container" style="background-image: url('https://FrozenArcher.github.io/post-images/mou-cai-ji-de-di-yi-pian-ti-jie.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
+    </article>
+    
+    <article class="thumb">
+        
+            <a href="https://FrozenArcher.github.io/post-images/ti-jie-p4017-zui-da-shi-wu-lian-ji-shu.jpg" class="image"><img src="https://FrozenArcher.github.io/post-images/ti-jie-p4017-zui-da-shi-wu-lian-ji-shu.jpg" /></a>
+        
+        <h2>题解 P4017最大食物链计数</h2>
+        <h1 id="p4017-最大食物链计数题解">P4017 最大食物链计数题解</h1>
+<blockquote>
+<ul>
+<li>拓扑排序</li>
+</ul>
+</blockquote>
+<hr>
+<p><a href="https://www.luogu.com.cn/problem/P4017">题目链接：洛谷</a></p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;cstring&gt;
+#define mod  80112002
+#define MAXN 5005
+using namespace std;
 
-          <div class="pagination-container">
-  
-  
+int n,m,ans=0;
+vector &lt;int&gt; linker[MAXN];               //邻接表
+queue  &lt;int&gt; q;                          //搜索用的队列
+int f[MAXN],id[MAXN],od[MAXN];           /*f: 记录每一个点的计数
+                                           id:记录每一个点的入度
+                                           od:记录每一个点的出度*/
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=m;i++)
+    {
+        int x,y;
+        cin&gt;&gt;x&gt;&gt;y;
+        od[x]++;
+        id[y]++;
+        linker[x].push_back(y);
+    }                                    //输入
+    memset(f,0,sizeof(f));               //保证计数数组为0
+
+    for(int i=1;i&lt;=n;i++)
+        if(!id[i])
+        {
+            q.push(i);           //当入度为0，即该点表示生产者，加入队列，从这些点开始搜索
+            f[i]=1;              //这些点的计数为1
+        }                
+    
+    while(!q.empty())
+    {
+        int x=q.front();
+        q.pop();
+        for(int i=0;i&lt;linker[x].size();i++)
+        {
+            int y = linker[x][i];            //遍历点x指向的所有点
+            f[y]  = (f[x] + f[y]) % mod;     //y点的计数=所有指向y点的点的计数之和
+            id[y]--;						 /*为保证所有指向y的点的计数都已被计算，需要计算1个点入度就-1.*/
+            if(!id[y]) q.push(y);            //如果y的入度为0，说明被计算完成，加入队列。
+        }
+    }
+    for(int i=1;i&lt;=n;i++)
+        if(!od[i]) ans= (ans + f[i]) % mod;  //如果i处于食物链顶端，就把它的计数加起来
+    cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+
+    </article>
+    
+    <article class="thumb">
+        
+            <a href="https://FrozenArcher.github.io/post-images/ti-jie-p1294-gao-shou-qu-san-bu.jpg" class="image"><img src="https://FrozenArcher.github.io/post-images/ti-jie-p1294-gao-shou-qu-san-bu.jpg" /></a>
+        
+        <h2>题解P1294 高手去散步</h2>
+        <h1 id="题解-p1294-高手去散步">题解 P1294 高手去散步</h1>
+<p><a href="https://www.luogu.com.cn/problem/P1294">题目链接</a></p>
+<h2 id="解题思路">解题思路</h2>
+<ol>
+<li>用邻接表存图</li>
+<li>依次枚举每个结点，找出这些节点的“最大答案”</li>
+<li>对于每个节点，采用深度优先遍历，找出最长路径。</li>
+</ol>
+<hr>
+<h2 id="核心代码">核心代码：</h2>
+<p>依据思路，对于每个节点，我们可以写出深度优先遍历的函数，采用递归写法：</p>
+<pre><code class="language-c++">//用 __ans 记录最长路径，linker[MAX_N][MAX_N] 为存图用的邻接表，vis[MAX_N]记录是否访问。
+void dfs(int x, int DIS_NOW)                   //传递参数：编号为x的节点和此时的路程DIS_NOW
+{
+    __ans=max(__ans, DIS_NOW);                 //把__ans更新为最大值
+    for(int i=1;i&lt;=n;i++)                      //遍历每个节点
+    {
+        if(linker[x][i] &gt; 0 &amp;&amp; vis[i] == 0)    //如果两个节点之间有边连接且未访问
+        {
+            vis[i]=1;                          //标记为已访问
+            dfs(i, DIS_NOW + linker[x][i]);    //dfs下一个节点
+            vis[i]=0;                          //解除记录
+        }
+    }
+}
+</code></pre>
+<hr>
+<h2 id="完整代码">完整代码：</h2>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#define  MAX_N 25
+using namespace std;
+
+/* by FrozenArcher */
+
+int   n,m;
+bool  vis[MAX_N];
+int   linker[MAX_N][MAX_N];
+int   ans,__ans;
+
+int max(int x, int y)
+{
+    if(x&gt;y) return x;
+    else return y;
+}
+
+void dfs(int x, int DIS_NOW)
+{
+    __ans=max(__ans, DIS_NOW);
+    for(int i=1;i&lt;=n;i++)
+    {
+        if(linker[x][i] &gt; 0 &amp;&amp; vis[i] == 0)
+        {
+            vis[i]=1;
+            dfs(i, DIS_NOW + linker[x][i]);
+            vis[i]=0;
+        }
+    }
+}
+
+int main()
+{
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int i=1;i&lt;=m;i++)
+    {
+        int from,to,cost;
+        cin&gt;&gt;from&gt;&gt;to&gt;&gt;cost;
+        linker[from][to]=linker[to][from]=cost;  //由于是无向图，两个方向都要存
+    }      
+    for(int i=1;i&lt;=n;i++)                        //得到每个点的最大距离
+    {
+        vis[i]=1;
+        dfs(i, 0);
+        ans=max(ans,__ans);                      //记录所有点中最大距离
+        __ans=0;
+        memset(vis, 0, sizeof(vis));             //清空访问记录
+    }
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
+<p>————end————</p>
+<hr>
+
+    </article>
+    
+    <article class="thumb">
+        
+            <a href="https://FrozenArcher.github.io/post-images/ti-jie-p1996.jpg" class="image"><img src="https://FrozenArcher.github.io/post-images/ti-jie-p1996.jpg" /></a>
+        
+        <h2>题解 P1996</h2>
+        <h1 id="p1996-约瑟夫问题">P1996 约瑟夫问题</h1>
+<p><s>又是一道一遍过的水题</s></p>
+<p><a href="https://www.luogu.com.cn/problem/P1996">题目链接</a></p>
+<p>本题使用STL里的队列</p>
+<p><code>#include&lt;queue&gt;</code></p>
+<p>食用方法：</p>
+<p><code>queue &lt;int&gt; q;</code>	         建立一个内部元素类型为int的队列；</p>
+<p><code>q.push(x);</code>                     在队尾插入一个元素x；</p>
+<p><code>q.pop();</code>                         弹出队首元素；</p>
+<p><code>q.front();</code>                     查询队首元素；</p>
+<p><code>q.end();</code>                         查询队尾元素；</p>
+<p><code>q.size();</code>                       返回元素个数；</p>
+<p><code>q.empty();</code>                     判断队列是否为空；</p>
+<hr>
+<h2 id="解题思路">解题思路</h2>
+<p>每个人轮流报数，就相当于把这些人排成一排，排头报数，报完数走到队尾。所以，只要判断这个队列的队首元素是不是报到m的那个人，如果是，直接把他删除；如果不是，让他排到队尾。而队列是否还有元素可以用<code>empty()</code>来判断。有了这一思路，我们可以得到核心代码：</p>
+<pre><code class="language-c++">for(int cnt=1;!q.empty();cnt++)  //用cnt%m==0来判断是不是报到了m。
+    {                            //一直循环进行到队列为空
+        int x=q.front();         //记录队首元素
+        q.pop();                 //把队首元素抛弃
+        if(cnt%m==0)             //如果报到了m
+        {
+            cout&lt;&lt;x&lt;&lt;' ';        //输出答案，同时被取出的这个人永远的消失了
+            continue;
+        }
+        q.push(x);               //如果不是，就把他排到队尾
+    }
+</code></pre>
+<p>再根据题意，写出程序其他部分即可。</p>
+<hr>
+<h2 id="完整代码">完整代码</h2>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;queue&gt;
+using namespace std;
+
+int main()
+{
+    int n,m;
+    cin&gt;&gt;n&gt;&gt;m;
+    queue &lt;int&gt; q;
+    for(int i=1;i&lt;=n;i++)
+    {
+        q.push(i);
+    }
+    for(int cnt=1;!q.empty();cnt++)
+    {
+        int x=q.front();
+        q.pop();
+        if(cnt%m==0)
+        {
+            cout&lt;&lt;x&lt;&lt;' ';
+            continue;
+        }
+        q.push(x);
+    }
+    return 0;
+}
+
+//by FrozenArcher
+</code></pre>
+
+    </article>
+    
+    <article class="thumb">
+        
+            <a href="https://FrozenArcher.github.io/post-images/mou-cai-ji-de-di-yi-pian-ti-jie.jpg" class="image"><img src="https://FrozenArcher.github.io/post-images/mou-cai-ji-de-di-yi-pian-ti-jie.jpg" /></a>
+        
+        <h2>某菜鸡的第一篇题解</h2>
+        <h1 id="ab-problem">a+b Problem</h1>
+<p><s>全站最水的一道题</s></p>
+<p><a href="https://www.luogu.com.cn/problem/P1001">题目链接</a></p>
+<p>不多说，直接上代码：</p>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a,b;
+    cin&gt;&gt;a&gt;&gt;b;
+    cout&lt;&lt;a+b;
+    return 0;
+}
+//by FrozenArcher
+</code></pre>
+
+    </article>
+    
+</main>
+
+
+    <!-- 页脚 -->
+    
+<footer id="footer" class="panel">
+    
+    <div class="inner split">
+        <div>
+            <section>
+                <h2>关于</h2>
+                <p>FrozenArcher's Blog</p>
+            </section>
+            <section>
+                <h2>求订阅我的...</h2>
+                <ul class="icons">
+                    
+                        
+                            <li><a href="https://github.com/FrozenArcher" class="icon brands fa-github"><span class="label">github</span></a></li>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+            </section>
+            <p class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
+        </div>
+    </div>
+    
+</footer>
+
 </div>
 
-        </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+<!-- 脚本 -->
 
-AOS.init();
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
-</script>
+<script src="media/scripts/jquery.min.js"></script>
+<script src="media/scripts/jquery.poptrox.min.js"></script>
+<script src="media/scripts/browser.min.js"></script>
+<script src="media/scripts/breakpoints.min.js"></script>
+<script src="media/scripts/util-multiverse.js"></script>
+<script src="media/scripts/main-multiverse.js"></script>
 
 
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
-
-
-
-
-
-  </body>
+</body>
 </html>
